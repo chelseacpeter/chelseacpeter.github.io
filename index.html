@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chelsea Peter - ASL Professional</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Add this to your head section if not already present -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        section {
+            padding: 80px 0;
+        }
+        .jumbotron {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581337204873-ef36aa186caa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            margin-bottom: 0;
+        }
+        .quote-card {
+            border-left: 5px solid #0d6efd;
+            padding: 20px;
+            margin: 40px 0;
+            background-color: #f8f9fa;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #0d6efd;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -50px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #0d6efd;
+            border: 3px solid white;
+        }
+        .resume-section {
+            background-color: #f8f9fa;
+        }
+        .cover-letter {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .video-placeholder {
+            background-color: #e9ecef;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+
+    .about-photo-frame {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+    .about-photo-frame:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .about-photo-frame img {
+        transition: transform 0.5s ease;
+    }
+    .about-photo-frame:hover img {
+        transform: scale(1.05);
+    }
+	.card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+    
+    .quote-card {
+        transition: all 0.3s ease;
+    }
+    
+    .quote-card:hover {
+        transform: scale(1.02);
+    }
+	/* Enhanced Hover Effects */
+/* Navigation */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+    padding-bottom: 5px;
+}
+.nav-link:hover {
+    color: #fff !important;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Timeline Items */
+.timeline-item {
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 8px;
+}
+.timeline-item:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+    transform: translateX(5px);
+}
+
+/* Resource Cards */
+#resources .card {
+    transition: all 0.3s ease;
+    border: none;
+}
+#resources .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+#resources .card-body {
+    position: relative;
+    overflow: hidden;
+}
+#resources .card-body::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+    transition: width 0.3s ease;
+}
+#resources .card:hover .card-body::before {
+    width: 100%;
+}
+
+/* Sample Work Placeholders */
+.video-placeholder {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.video-placeholder:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.video-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.video-placeholder:hover::before {
+    opacity: 1;
+}
+.video-placeholder p {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+.video-placeholder:hover p {
+    transform: scale(1.05);
+    color: #2c3e50;
+}
+
+/* Footer Links */
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px dashed transparent;
+}
+footer a:hover {
+    color: #3498db;
+    border-bottom-color: #3498db;
+}
+/* Cover Letter Enhancements */
+.cover-letter {
+    position: relative;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.cover-letter:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+.cover-letter::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #3498db, #9b59b6);
+    border-radius: 8px 0 0 8px;
+}
+/* Resume Enhancements */
+#resume .card {
+    transition: all 0.3s ease;
+}
+#resume .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+#resume h4 {
+    position: relative;
+    padding-bottom: 10px;
+}
+#resume h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #9b59b6);
+}
+#resume ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+#resume ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+/* Timeline Enhancements */
+.timeline:before {
+    background: linear-gradient(to bottom, #3498db, #9b59b6);
+}
+.timeline-item:before {
+    background: linear-gradient(135deg, #3498db, #9b59b6);
+    box-shadow: 0 0 0 3px #f8f9fa;
+}
+.timeline-item h4 {
+    color: #2c3e50;
+    font-family: 'Playfair Display', serif;
+}
+.timeline-item ul {
+    padding-left: 20px;
+}
+.timeline-item ul li {
+    position: relative;
+    margin-bottom: 10px;
+}
+.timeline-item ul li::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3498db;
+}
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <!-- Navigation -->
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Chelsea Peter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#welcome">Welcome</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cover-letter">Cover Letter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#statements">Statements</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#samples">Samples</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#timeline">Timeline</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Welcome Section -->
+<section id="welcome" class="jumbotron text-center">
+    <div class="container">
+        <h1 class="display-4">Chelsea Peter</h1>
+        <p class="lead">ASL Interpreter & Advocate for Deaf Community</p>
+        <hr class="my-4" style="border-color: rgba(255,255,255,0.3); width: 80%; margin: 1.5rem auto;">
+        
+        <!-- Elegant Tagline -->
+        <div class="tagline-wrapper" style="position: relative; display: inline-block;">
+            <p class="tagline" style="
+                font-family: 'Playfair Display', serif;
+                font-size: 1.4rem;
+                font-weight: 300;
+                letter-spacing: 1px;
+                line-height: 1.6;
+                color: #fff;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                position: relative;
+                display: inline-block;
+                padding: 0 20px;
+                margin: 1.5rem 0;
+            ">
+                <span style="
+                    display: inline-block;
+                    position: relative;
+                ">
+                    <span class="text-rotate" style="
+                        display: inline-block;
+                        position: relative;
+                    ">Bridging communication gaps</span>
+                </span>
+                <br>
+                <span style="
+                    font-style: italic;
+                    font-weight: 400;
+                    position: relative;
+                ">
+                    <span class="text-rotate" style="
+                        display: inline-block;
+                        position: relative;
+                    ">with compassion and skill</span>
+                </span>
+            </p>
+            <div style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 100%;
+                border-top: 1px solid rgba(255,255,255,0.2);
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+                pointer-events: none;
+            "></div>
+        </div>
+        
+        <div class="row mt-5 align-items-center">
+            <!-- Video Column -->
+            <div class="col-lg-6 mb-4">
+                <div class="ratio ratio-16x9">
+					<iframe src="https://www.youtube.com/embed/9kG9DelQGaA?autoplay=1&mute=1" 
+					title="Chelsea Peter ASL Introduction" 
+					frameborder="0" 
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+					allowfullscreen
+					class="shadow rounded">
+			</iframe>
+                </div>
+                <!-- <p class="mt-2 text-light"><small>Video: My </small></p> -->
+            </div>
+            
+            <!-- Transcript Column -->
+            <div class="col-lg-6 mb-4 text-start">
+                <div class="card bg-light text-dark">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Video Transcript</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <strong>Hello, my name is Chelsea Peter.</strong> I want to share why I got into ASL. 
+                            I met a girl who was deaf, and that experience inspired me to go to school for ASL. 
+                        </p>
+                        <p class="card-text">
+                            I quickly fell in love with the language and the culture. At first, I had a lot of 
+                            fun learning in class. I got motivated to learn and found help to keep me on my path.
+                        </p>
+                        <p class="card-text">
+                            Later, I met two people who really helped me. They pointed out where I was going 
+                            wrong and guided me to improve. That support motivated me to work harder and 
+                            start asking for help.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">About Me</h2>
+        <div class="row">
+            <!-- Text Column -->
+            <div class="col-lg-6">
+                <p>Hello, my name is Chelsea Peter. I was born in Riverside, California, and grew up in Hanford. Growing up, we moved around a lot, and I attended several different schools. After graduating high school, I got married and moved to New York due to my husband's service in the Army.</p>
+                
+                <!-- Photo Grid Top Row -->
+                <div class="row mb-3 g-3">
+                    <div class="col-md-6">
+                        <div class="about-photo-frame rounded overflow-hidden shadow-sm">
+                            <img src="Chelsea.jpg" alt="Chelsea with family" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-photo-frame rounded overflow-hidden shadow-sm">
+                            <img src="Beach1.jpg" alt="Chelsea teaching ASL" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <p>We lived there for two and a half years before moving back to Visalia in 2014, shortly after I had my first child. That's when I decided to go back to school and pursue a career in the medical field.</p>
+                <p>In 2017, I had my first daughter. After her birth, I reconnected with a deaf friend and realized I was struggling to understand her. That experience reignited my interest in ASL, so I enrolled in ASL 1 to learn the basics.</p>
+            </div>
+            
+            <!-- Photo/Text Column -->
+            <div class="col-lg-6">
+                <p>Although my friend eventually moved away and we lost contact, my passion for ASL stayed with me. In 2019, I had my youngest child and began using ASL more regularly. I even started teaching my kids basic signs to help us communicate more easily.</p>
+                
+                <!-- Photo Grid Bottom Row -->
+                <div class="row mb-3 g-3">
+                    <div class="col-md-6">
+                        <div class="about-photo-frame rounded overflow-hidden shadow-sm">
+                            <img src="Beach2.jpg" alt="Chelsea at graduation" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="about-photo-frame rounded overflow-hidden shadow-sm">
+                            <img src="book.jpg" alt="Chelsea at the beach" class="img-fluid w-100" style="object-fit: cover; height: 200px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <p>Eventually, I returned to COS to pursue a degree in ASL. In 2024, I adopted my youngest child, someone I had known since birth. After her father passed away, I welcomed her into our family as one of our own.</p>
+                <p>Now, I'm proud to say I'm graduating this May with my Associate of Arts degree in ASL. In my spare time, I enjoy reading, spending time with my family, taking road trips, and visiting the beach, which has become my peaceful escape from the everyday world.</p>
+            </div>
+        </div>
+        
+        <div class="quote-card">
+            <blockquote class="blockquote">
+                <p>"Kindness is A Language Which the Deaf can hear and the blind can see."</p>
+                <footer class="blockquote-footer">Mark Twain</footer>
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+    <!-- Cover Letter Section -->
+    <section id="cover-letter" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Cover Letter</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="cover-letter">
+                        <p><strong>To whom it may concern,</strong></p>
+                        
+                        <p>I am writing to express my interest in an ASL Interpreter Internship. As a soon-to-be graduate with an Associate of Arts degree in American Sign Language from College of the Sequoias, I am passionate about making communication more inclusive and accessible for the Deaf and Hard of Hearing community.</p>
+                        
+                        <p>My interest in ASL began after a personal experience with a deaf friend, which opened my eyes to the importance of bridging communication gaps. Since then, I've dedicated myself to learning the language and culture through formal education, everyday practice, and helping my own children learn basic signs. These experiences have not only developed my signing ability but have also taught me the value of patience, clarity, and cultural sensitivity.</p>
+                        
+                        <p>While I am still early in my career, I am eager to continue growing as an interpreter and applying what I've learned in real-world settings. I am a quick learner, a strong communicator, and genuinely committed to supporting accessible communication. I believe I would be the perfect place to begin my journey in the interpreting field.</p>
+                        
+                        <p>I would welcome the opportunity to speak with you more about how I can contribute to your team. Thank you for considering my application.</p>
+                        
+                        <p><strong>Sincerely,</strong><br>
+                        Chelsea Peter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Resume</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h3 class="card-title text-center">Chelsea Peter</h3>
+                            <p class="text-center">1733 S Casablanca St, Visalia, CA 93292<br>
+                            559-378-4363 | Chelsea.c.peter@gmail.com</p>
+                            <hr>
+                            
+                            <h4>Objective</h4>
+                            <p>Motivated and compassionate college student graduating with an Associate of Arts in American Sign Language. Seeking an entry-level position or internship as an ASL interpreter to support inclusive communication and continue developing professional interpreting skills.</p>
+                            
+                            <h4>Education</h4>
+                            <p><strong>College of the Sequoias</strong> — Visalia, CA<br>
+                            <em>Associate of Arts in American Sign Language</em><br>
+                            Expected May 2025</p>
+                            
+                            <h4>Relevant Experience</h4>
+                            <p><strong>Student ASL Interpreter (Volunteer Practice)</strong><br>
+                            College of the Sequoias — Visalia, CA</p>
+                            <ul>
+                                <li>Practiced interpreting dialogues, lectures, and everyday conversations in ASL classes.</li>
+                                <li>Collaborated with classmates in group settings to refine receptive and expressive skills.</li>
+                                <li>Engaged in cultural learning activities related to Deaf history and community.</li>
+                            </ul>
+                            
+                            <p><strong>Parent ASL Educator (Personal Use)</strong><br>
+                            Home-based | 2019--Present</p>
+                            <ul>
+                                <li>Taught basic ASL signs to young children to help with early communication.</li>
+                                <li>Applied ASL regularly in everyday settings to improve fluency.</li>
+                            </ul>
+                            
+                            <h4>Skills</h4>
+                            <ul>
+                                <li>Proficient in ASL (Level 1--3)</li>
+                                <li>Strong understanding of Deaf culture</li>
+                                <li>Clear and empathetic communicator</li>
+                                <li>Quick learner and detail-oriented</li>
+                                <li>Team player and adaptable in new environments</li>
+                            </ul>
+                            
+                            <h4>Certifications</h4>
+                            <ul>
+                                <li>CPR/First Aid</li>
+                                <li>Certified Nursing Assistant</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Statements Section -->
+<section id="statements" class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+        <h2 class="text-center mb-5">Statements</h2>
+        
+        <div class="quote-card" style="background: white; border-radius: 10px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); max-width: 800px; margin: 0 auto 50px; border-left: 4px solid #9b59b6;">
+            <blockquote class="blockquote" style="margin: 0; position: relative;">
+                <i class="fas fa-quote-left" style="position: absolute; top: -15px; left: -10px; color: #e9ecef; font-size: 3rem; z-index: 0;"></i>
+                <p style="position: relative; z-index: 1; font-size: 1.2rem; line-height: 1.6; color: #2c3e50; font-style: italic;">"Deaf People can do anything, except hear."</p>
+                <footer class="blockquote-footer" style="margin-top: 15px; font-size: 1rem; color: #7f8c8d;">Marlee Matlin</footer>
+            </blockquote>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;">
+                    <div class="card-body p-4" style="position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: rgba(52, 152, 219, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <i class="fas fa-heart" style="font-size: 1.5rem; color: #3498db;"></i>
+                        </div>
+                        <h4 class="card-title mb-3" style="font-family: 'Playfair Display', serif; color: #2c3e50;">Value Statement</h4>
+                        <p class="card-text" style="color: #7f8c8d; line-height: 1.7;">I am committed to creating inclusive and respectful communication spaces by bridging the gap between the hearing and Deaf communities through American Sign Language. I believe in lifelong learning, cultural understanding, and using my skills to empower others and promote accessibility in every environment I serve.</p>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #3498db, #2ecc71);"></div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;">
+                    <div class="card-body p-4" style="position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: rgba(46, 204, 113, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <i class="fas fa-bullseye" style="font-size: 1.5rem; color: #2ecc71;"></i>
+                        </div>
+                        <h4 class="card-title mb-3" style="font-family: 'Playfair Display', serif; color: #2c3e50;">Mission Statement</h4>
+                        <p class="card-text" style="color: #7f8c8d; line-height: 1.7;">My mission is to serve as a compassionate and skilled ASL interpreter who promotes equal access to communication for the Deaf and Hard of Hearing community. I strive to build bridges between cultures, advocate for inclusivity, and continue growing my skills to provide respectful, accurate, and meaningful interpretation in every interaction.</p>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #2ecc71, #f1c40f);"></div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="transition: all 0.3s ease; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden;">
+                    <div class="card-body p-4" style="position: relative; z-index: 1;">
+                        <div style="width: 60px; height: 60px; background: rgba(155, 89, 182, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                            <i class="fas fa-eye" style="font-size: 1.5rem; color: #9b59b6;"></i>
+                        </div>
+                        <h4 class="card-title mb-3" style="font-family: 'Playfair Display', serif; color: #2c3e50;">Vision Statement</h4>
+                        <p class="card-text" style="color: #7f8c8d; line-height: 1.7;">My vision is to become a trusted and culturally aware ASL interpreter who helps create a world where Deaf and Hard of Hearing individuals can fully participate, be understood, and feel valued in every setting—educational, professional, and personal.</p>
+                    </div>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #f1c40f, #e74c3c);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Sample Work Section -->
+    <section id="samples" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Sample Work</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="video-placeholder">
+                        <p>ASL Interpretation Sample 1 (Coming Soon)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="video-placeholder">
+                        <p>ASL Interpretation Sample 2 (Coming Soon)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="video-placeholder">
+                        <p>Teaching ASL Basics (Coming Soon)</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="video-placeholder">
+                        <p>Deaf Culture Presentation (Coming Soon)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Professional Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Year 1 (2025)</h4>
+                    <ul>
+                        <li>Graduate with an A.A. in American Sign Language from College of the Sequoias.</li>
+                        <li>Begin shadowing a certified interpreter in various settings (e.g., education, healthcare, community events).</li>
+                        <li>Continue practicing and improving fluency through volunteer work or part-time roles.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Year 2 (2026)</h4>
+                    <ul>
+                        <li>Enroll in a professional interpreter training program or workshops.</li>
+                        <li>Build a professional portfolio with interpreting samples and experiences.</li>
+                        <li>Begin working in entry-level interpreting roles or internships.</li>
+                        <li>Network with local Deaf community members and mentors.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Year 3 (2027)</h4>
+                    <ul>
+                        <li>Prepare for and take the NIC (National Interpreter Certification) or BEI certification, if applicable.</li>
+                        <li>Work regularly as a freelance or staff interpreter in educational or healthcare settings.</li>
+                        <li>Continue professional development with advanced ASL or Deaf culture classes.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Year 4 (2028)</h4>
+                    <ul>
+                        <li>Expand experience into specialized interpreting (medical, legal, educational).</li>
+                        <li>Serve as a mentor to new ASL students or interns.</li>
+                        <li>Build a reputation for professionalism and cultural respect in the field.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h4>Year 5 (2029)</h4>
+                    <ul>
+                        <li>Become a certified, full-time professional interpreter.</li>
+                        <li>Possibly pursue a bachelor's degree in interpreting or Deaf studies.</li>
+                        <li>Consider long-term goals such as teaching ASL, coordinating accessibility programs, or advocating for Deaf rights.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Resources</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Learning ASL</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.nad.org/resources/american-sign-language/learning-american-sign-language/" target="_blank">NAD - Learning American Sign Language</a></li>
+                                <li><a href="https://www.cos.edu/en-us/academics/language-communication/american-sign-language" target="_blank">College of the Sequoias ASL Program</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Professional Organizations</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://rid.org/" target="_blank">Registry of Interpreters for the Deaf (RID)</a></li>
+                                <li><a href="https://dhhsc.org/" target="_blank">Deaf and Hard of Hearing Service Center</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Local Resources</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://www.tcoe.org/SpecialEducation/Deaf" target="_blank">Tulare County Office of Education - Deaf Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Chelsea Peter - ASL Professional</p>
+            <p>Contact: Chelsea.c.peter@gmail.com | 559-378-4363</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		// Enhanced smooth scrolling with navbar offset
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function(e) {
+				e.preventDefault();
+				const targetId = this.getAttribute('href');
+				const targetElement = document.querySelector(targetId);
+				const navbarHeight = document.querySelector('.navbar').offsetHeight;
+				const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+				
+				window.scrollTo({
+					top: targetPosition,
+					behavior: 'smooth'
+				});
+				
+				// Update URL hash without jumping
+				history.pushState(null, null, targetId);
+			});
+		});
+	</script>
+</body>
+</html>
